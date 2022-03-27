@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of items">
+      <ion-item>
+        <h2>{{item.name}}</h2>
+        <p>{{item.quantity}}</p>
+      </ion-item>
+      <ion-item-options>
+        <button (click)= "removeItem(item)" ion-button color="secondary" ion-start>
+          <ion-icon name="trash"></ion-icon>
+          Done
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+  <ion-fab bottom right>
+    <button (click)= "addItem()" ion-fab mini><ion-icon name= "add"></ion-icon></button>
+  </ion-fab>
+  <!--<h2>Welcome to Grocery!</h2>
+  <p>
+   We will be filling items into this Grocery App!
+  </p>
+-->
+</ion-content>
